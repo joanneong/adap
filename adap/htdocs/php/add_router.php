@@ -3,7 +3,7 @@
   include("../config.php");
 
   // Add router function
-  if (isset($_POST['mac_address'], $_POST['model'], $_POST['version'])) {
+  if ($_POST['mac_address'] != '' && $_POST['model'] != '' && $_POST['version'] != '') {
     $query = "INSERT INTO router VALUES(
               '$_POST[company_email]',
               '$_POST[mac_address]',
