@@ -26,7 +26,7 @@
 </head>
 <body>
     <nav class="grey darken-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo" style="left:0%">ADAP</a>
+    <div class="nav-wrapper container"><a id="logo-container" href="../index.php" class="brand-logo" style="left:0%">ADAP</a>
       <ul class="right">
         <!--li><?php echo $_SESSION[name]; ?></li-->
         <li><a href="../index.php">Home</a></li>

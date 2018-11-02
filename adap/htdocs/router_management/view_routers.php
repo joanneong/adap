@@ -35,7 +35,7 @@
   </style>
 </head>
 <body>
-  <a class="waves-effect waves-light btn grey darken-2" href="" id="add-avail">Whitelist a router</a>
+  <a class="waves-effect waves-light btn grey darken-2" href="add_router.php" id="add-avail">Whitelist a router</a>
   <div class="container">
     <h3 class="grey-text text-darken-3 light center">Whitelisted Routers</h3>
   </div>
@@ -59,6 +59,8 @@
         $mac_address = $row['mac_address'];
         $model = $row['model'];
         $version = $row['version'];
+
+        // TODO: display routers
       }
     ?>
 </body>
