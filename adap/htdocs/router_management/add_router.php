@@ -23,43 +23,33 @@
   </div>
 
  <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="col s6 offset-s3">
-          <p>Router MAC Address</p>
-        </div>
-      </div>
+    <form class="col s12" id="add_router">
       <div class="row">
         <div class="input-field col s6 offset-s3">
           <i class="material-icons prefix">wifi</i>
-          <textarea id="mac_address" class="materialize-textarea"></textarea>
+          <input id="mac_address" type="text" class="materialize-textarea">
+          <label for="mac_address">Router MAC Address</label>
         </div>
       </div>
-      <div class="row">
-        <div class="col s6 offset-s3">
-          <p>Router Model</p>
-        </div>
-      </div>
+      
       <div class="row">
         <div class="input-field col s6 offset-s3">
           <i class="material-icons prefix">router</i>
-          <textarea id="model" class="materialize-textarea"></textarea>
+          <input id="model" type="text" class="materialize-textarea">
+          <label for="model">Router Model</label>
         </div>
       </div>
-      <div class="row">
-        <div class="col s6 offset-s3">
-          <p>Router Firmware Version</p>
-        </div>
-      </div>
+    
       <div class="row">
         <div class="input-field col s6 offset-s3">
           <i class="material-icons prefix">laptop</i>
-          <textarea id="version" class="materialize-textarea"></textarea>
+          <input id="version" type="text" class="materialize-textarea">
+          <label for="version">Router Firmware Version</label>
         </div>
       </div>
       <div class="row">
         <div class="col s4 offset-s4 center">
-          <button class="btn waves-effect waves-light btn grey darken-2 center-align" type="submit" name="submitadd">Whitelist this Router
+          <button class="btn waves-effect waves-light btn orange center-align" type="submit" name="submitadd">Whitelist this Router
             <i class="material-icons right"></i>
           </button>
         </div>
@@ -69,10 +59,11 @@
 
   <!-- Import jQuery and other relevant JavaScript files -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="../js/materialize.min.js"></script>
   <script type="text/javascript">
-    var caretaker ='<?php echo $_SESSION[email];?>';
+    // var company_email ='<?php echo $_SESSION[email];?>';
+    var company_email = 'cs3235@gmail.com';
   </script>
-  <script type="text/javascript" src="js/add_router.js"></script>
+  <script type="text/javascript" src="../js/add_router.js"></script>
 </body>
 </html>

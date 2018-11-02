@@ -61,6 +61,9 @@
         $version = $row['version'];
 
         // TODO: display routers
+        echo $mac_address;
+        echo $model;
+        echo $version;
       }
     ?>
 </body>
