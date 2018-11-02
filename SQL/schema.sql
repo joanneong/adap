@@ -23,11 +23,11 @@ CREATE TABLE router (
 	PRIMARY KEY (company_email, mac_address)
 );
 
-CREATE TABLE cve {
+CREATE TABLE cve (
 	router_model VARCHAR(150),
 	router_version VARCHAR(20),
 	vulnerability VARCHAR(500),
-	PRIMARY KEY (model, version)
-}
+	PRIMARY KEY (router_model, router_version)
+);
 
 /* SET datestyle = "ISO, YMD"; */
