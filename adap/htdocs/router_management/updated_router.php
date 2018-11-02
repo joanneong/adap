@@ -15,17 +15,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <style>
-    .delete {font-size: 30px;}
-    .edit {font-size: 30px;}
-    .delete:hover {
-      color: #f44336;
-      opacity: 0.6;
-    }
-    .edit:hover {
-      color: #4caf50;
-      opacity: 0.6;
-    }
-    #add-avail {
+    #back {
         position: fixed;
         bottom: 8px;
         right: 8px;
@@ -33,9 +23,9 @@
   </style>
 </head>
 <body>
-  <a class="waves-effect waves-light btn grey darken-2" href="add_router.php" id="add-avail">Whitelist a router</a>
+  <a class="waves-effect waves-light btn grey darken-2" href="view_routers.php" id="back">Back</a>
   <div class="container">
-    <h3 class="grey-text text-darken-3 light center">Whitelisted Routers</h3>
+    <h3 class="grey-text text-darken-3 light center">Successfully updated router information!</h3>
   </div>
   <div class="container">
     <div class="row">
@@ -46,13 +36,8 @@
                   WHERE company_email = '$_SESSION[email]'";*/
           $sql = "SELECT *
                   FROM router
-                  WHERE company_email = 'cs3235@gmail.com'";
+                  WHERE mac_address = '$_GET[mac_address]'";
           $result = pg_query($db, $sql);
-
-          // If the company has not whitelisted any router
-          if (pg_num_rows($result) == 0) {
-            echo "<h5 class=\"center\">No router has been whitelisted.</h5>";
-          }
 
           // Create a while loop and loop through result set
           while($row = pg_fetch_assoc($result)){
@@ -62,7 +47,7 @@
 
             // TODO: display routers
             ?>
-            <div class="col s4">
+            <div class="col s4 offset-s4">
               <div class="card hoverable">
                 <div class="card-content">
                   <div class="row">
@@ -81,10 +66,6 @@
                         <span class="orange-text text-darken-1 text-size light">Router Firmware Version:
                         <span class="grey-text text-darken-2 text-size light"><?php echo $version ?>
                       </p>
-                  </div>
-                  <div class="row">
-                    <a class="waves-effect waves-light orange btn left" href="edit_router.php?mac_address=<?php echo $mac_address?>&model=<?php echo $model ?>&version=<?php echo $version ?>">Edit</a>
-                    <a class="waves-effect waves-light grey btn right" href="delete_router.php?mac_address=<?php echo $mac_address?>&model=<?php echo $model ?>&version=<?php echo $version ?>">Delete</a>
                   </div>
                 </div>
               </div>

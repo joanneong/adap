@@ -17,10 +17,9 @@ CREATE TABLE company_account (
 
 CREATE TABLE router (
 	company_email VARCHAR(355) REFERENCES company_account(email) ON UPDATE CASCADE ON DELETE CASCADE,
-	mac_address CHAR(17),
+	mac_address CHAR(17) PRIMARY KEY,
 	model VARCHAR(150) NOT NULL,
-	version VARCHAR(20) NOT NULL,
-	PRIMARY KEY (company_email, mac_address)
+	version VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE cve (
