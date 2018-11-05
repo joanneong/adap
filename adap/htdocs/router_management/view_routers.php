@@ -94,7 +94,7 @@
                   <span class="card-title red-text text-darken-4">CVE Information<i class="material-icons right">close</i></span>
                   <p><b>Model:</b> <?php echo $model ?></p>
                   <p><b>Version:</b> <?php echo $version ?></p>
-                  <span class="col s12 cve" id="cve_content<?php echo $counter ?>"></span>
+                  <span style="white-space:pre-wrap;" class="col s12 cve" id="cve_content<?php echo $counter ?>"></span>
                 </div>
               </div>
             </div>
@@ -106,10 +106,7 @@
 
   <!-- Import jQuery and other relevant JavaScript files -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="../js/materialize.min.js"></script>
-    <script type="text/javascript">
-      var company_email = 'cs3235@gmail.com';
-    </script>
+  <script type="text/javascript" src="../js/materialize.min.js"></script>
   <script type="text/javascript" src="../js/view_cve.js"></script>
 </body>
 </html>

@@ -24,31 +24,36 @@ function searchCveDatabase(routerInfo) {
   request = $.post(
     "../php/view_cve.php",
     serializedRouterInfo,
-    checkIfFound
+    parseDatabaseResponse
   );
 }
 
-// Check if the query is successfully found in the database
-function checkIfFound(response) {
-  console.log(response);
+// Parse the response from the database
+function parseDatabaseResponse(response) {
   response = JSON.parse(response);
+  console.log(response);
   var numOfResponses = response.numOfResults;
-  var result = response.result;
+  var results = response.results;
 
   if (numOfResponses != 0) {
-    showCveDetails(result);
+    var fullResult = ""
+
+    console.log(results);
+    
+    for (i = 0; i < numOfResponses; i++) {
+      var currResult = results[i];
+
+      fullResult += "==================\n"
+
+      fullResult += "CVE ID: " + currResult.cve_id + "\n\n";
+      fullResult += "Severity: " + currResult.cve_severity + "\n\n";
+      fullResult += "Description: " + currResult.cve_description + "\n\n";
+    }
+    showCveDetails(fullResult);
   } else {
-    var result = "There is no known CVE associated with this router model and firmware version!";
-    showCveDetails(result);
+    var STANDARD_REPLY = "There is no known CVE associated with this router model and firmware version!";
+    showCveDetails(STANDARD_REPLY);
   }
-}
-
-// Default CVE database (online) to search
-const onlineDatabase = "https://www.cvedetails.com/google-search-results.php?";
-
-// Get cve search results from an online database using jQuery
-function getCveFromOnlineDatabse() {
-
 }
 
 // Display a given response in the card reveal

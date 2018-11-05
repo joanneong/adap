@@ -3,15 +3,18 @@
   include("../config.php");
 
   // Query for CVEs for the given router model and version
-  $query = "SELECT vulnerability FROM cve
-            WHERE router_model = '$_POST[router_model]'
-            AND router_version = '$_POST[router_version]'";
+  $query = "SELECT cve_id, cve_severity, cve_description FROM cve
+            WHERE router_model = '$_POST[router_model]'";
 
   $result = pg_query($db, $query)
               or die('Query failed.');
 
   $num = pg_num_rows($result);
+  $response = array("numOfResults"=>$num);
 
-  $response = array("numOfResults"=>$num, "result"=>pg_fetch_row($result));
+  while($row = pg_fetch_assoc($result)) {
+    $response["results"][] = $row;
+  }
+
   echo json_encode($response);
 ?>

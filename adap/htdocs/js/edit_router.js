@@ -23,7 +23,7 @@ $("#edit_router").submit(function(event) {
   mac_addr = mac_address;
 
   serializedData = 'mac_address=' + mac_address 
-      + '&model=' + model.toUpperCase()
+      + '&model=' + model.toLowerCase()
       + '&version=' + version
       + '&original_mac_addr=' + original_mac_addr;
   console.log("data: " + serializedData);
