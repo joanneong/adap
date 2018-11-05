@@ -21,7 +21,7 @@ $("#add_router").submit(function(event) {
   const version = target.version.value;
 
   serializedData = 'mac_address=' + mac_address 
-      + '&model=' + model
+      + '&model=' + model.toUpperCase()
       + '&version=' + version
       + '&company_email=' + company_email;
   console.log("data: " + serializedData);

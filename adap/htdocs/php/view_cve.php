@@ -11,17 +11,7 @@
               or die('Query failed.');
 
   $num = pg_num_rows($result);
-  echo $num;
-    
-  // while ($row = pg_fetch_row($result)) {
-  //   echo $row[0];
-  //   echo "\n";
-  // }
 
-  // If it is found, send the vunlnerability back to be displayed
-  // if ($numResults != 0) {
-  //   while ($row = pg_fetch_row($result)) {
-  //     echo $row[0];
-  //   }
-  // }
+  $response = array("numOfResults"=>$num, "result"=>pg_fetch_row($result));
+  echo json_encode($response);
 ?>
