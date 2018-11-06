@@ -31,6 +31,7 @@
       else if (trim($_POST['password'])==null) $err='Please enter password';
       else if ($row['email']==null) $err = 'Invalid email address';
       else if ($row['password']<>$_POST['password']) $err = 'Invalid password';
+      else if (!(strcasecmp($row['identification'], 't') == 0)) $err = 'Account is not yet verified!';
       else {
             session_start();
             $_SESSION[email] = $row[email];

@@ -12,7 +12,8 @@ CREATE TABLE company_account (
 	password VARCHAR(50) NOT NULL,
 	contact CHAR(8) NOT NULL,
 	address VARCHAR(355) NOT NULL,
-	postal_code CHAR(6) NOT NULL
+	postal_code CHAR(6) NOT NULL,
+	identification boolean NOT NULL DEFAULT false
 );
 
 CREATE TABLE router (

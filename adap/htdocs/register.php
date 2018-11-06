@@ -59,9 +59,7 @@
         $result = pg_query($db, "INSERT INTO company_account VALUES ('$company_name','$email','$password','$contact','$address','$postal_code')");
         if (!$result)  $err = 'Account was already created before. Would you like to <a href="../adap/login.php">log in</a> instead?';
         else {
-          session_start();
-            $_SESSION[email] = $row[email];
-            header("location: router_management/view_routers.php");
+            header("location: register_success.php");
         }
       }}
     ?>
