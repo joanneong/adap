@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+  <link rel="stylesheet" type="text/css" href="../css/view_routers.css">
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <style>
@@ -54,11 +55,13 @@
             echo "<h5 class=\"center\">No router has been whitelisted.</h5>";
           }
 
+          $counter = 0;
           // Create a while loop and loop through result set
           while($row = pg_fetch_assoc($result)){
             $mac_address = $row['mac_address'];
             $model = $row['model'];
             $version = $row['version'];
+            $counter = $counter + 1;
 
             // TODO: display routers
             ?>
@@ -66,7 +69,7 @@
               <div class="card hoverable">
                 <div class="card-content">
                   <div class="row">
-                    <img src="../img/linksys-EA7300.jpg" height="200">
+                    <img class="activator" id="<?php echo $counter ?> router_model=<?php echo $model ?>&router_version=<?php echo $version ?>" src="../img/linksys-EA7300.jpg" height="200">
                   </div>
                   <div class="row">
                       <p>
@@ -84,8 +87,14 @@
                   </div>
                   <div class="row">
                     <a class="waves-effect waves-light orange btn left" href="edit_router.php?mac_address=<?php echo $mac_address?>&model=<?php echo $model ?>&version=<?php echo $version ?>">Edit</a>
-                    <a class="waves-effect waves-light grey btn right" href="delete_router.php?mac_address=<?php echo $mac_address?>&model=<?php echo $model ?>&version=<?php echo $version ?>">Delete</a>
+                    <a class="waves-effect waves-light grey btn right" href="delete_router.php?mac_address=<?php echo $mac_address?>">Delete</a>
                   </div>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title red-text text-darken-4">CVE Information<i class="material-icons right">close</i></span>
+                  <p><b>Model:</b> <?php echo $model ?></p>
+                  <p><b>Version:</b> <?php echo $version ?></p>
+                  <span style="white-space:pre-wrap;" class="col s12 cve" id="cve_content<?php echo $counter ?>"></span>
                 </div>
               </div>
             </div>
@@ -94,5 +103,10 @@
         ?>
     </div>
   </div>
+
+  <!-- Import jQuery and other relevant JavaScript files -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../js/materialize.min.js"></script>
+  <script type="text/javascript" src="../js/view_cve.js"></script>
 </body>
 </html>

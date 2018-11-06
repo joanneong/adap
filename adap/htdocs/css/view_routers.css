@@ -1,0 +1,6 @@
+/* scrolling mechanism for cve content */
+.cve {
+  height: 65%;
+  word-wrap: break-word;
+  overflow-y: scroll;
+}
