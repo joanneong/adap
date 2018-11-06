@@ -26,8 +26,10 @@ CREATE TABLE router (
 CREATE TABLE cve (
 	router_model VARCHAR(150),
 	router_version VARCHAR(20),
-	vulnerability VARCHAR(500),
-	PRIMARY KEY (router_model, router_version)
+	cve_id VARCHAR(16),
+	cve_severity VARCHAR(7),
+	cve_description VARCHAR(500),
+	PRIMARY KEY (router_model, router_version, cve_id)
 );
 
 /* SET datestyle = "ISO, YMD"; */

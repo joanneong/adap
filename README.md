@@ -3,6 +3,7 @@
 ## Table of Contents
 - [Setting up](#setting-up)
 - [Using this repository](#using-this-repository)
+- [Running this application](#running-this-application)
 
 ## Setting up
 
@@ -39,6 +40,24 @@ Include "/Applications/mappstack-7.1.23-0/apps/adap/conf/httpd-prefix.conf"
 
 5. Save the file.
 
+##### Get `psycopg2` for python initialiser
+
+For Mac users, you can follow these steps:
+1. `brew install postgresql`
+2. `gem install pg`
+3. `pip install psycopg2`
+
+For Windows users, you can follow these steps:
+1. `python -m pip install -U pip`
+2. `python -m pip install psycopg2`
+
+##### Get `json` files for CVE database
+
+1. Go to https://nvd.nist.gov/vuln/data-feeds#JSON_FEED
+2. Download the `.zip` files for `CVE-Modified`, `CVE-Recent`, `CVE-2018`...`CVE-2012` (inclusive).
+3. Unzip the files.
+4. Shift the extracted `json` files into a folder named `json` in the `init` folder (i.e. on the same level as the `sql` folder).
+
 ## Using this repository
 
 The steps in this section can be executed whenever there are updates to this repository.
@@ -48,9 +67,8 @@ When there are changes to the `attack.sh` file:
 2. Navigate to the project folder.
 3. Run by doing `./attack.sh`.
 
-When there are changes to the `SQL` folder:
-1. Get the latest changes locally using `git pull`. Alternatively, you can just copy and paste the commands directly from GitHub.
-2. Copy and paste the commands into pgAdmin4 before using the application.
+When there are changes to the `init` folder:
+1. Get the latest changes locally using `git pull`.
 
 When there are changes to the `adap` folder:
 1. Get the latest changes locally using `git pull`.
@@ -60,3 +78,15 @@ When there are changes to the `adap` folder:
 5. Go to `localhost:8080/adap` to view the site.
 
 Before inter-page routing is completed, individual pages can be accessed by heading to `localhost:8080/adap/<filename>`.
+
+## Running this application
+
+To run this application:
+1. `cd` into the `init` folder, and run the Python script to initalise the database:
+
+`python initialise_db.py`
+
+The script will run for approximately 2.5 minutes. This is because it is loading ~5 years worth of CVE data into the database.
+
+2. Restart the servers using `manager-osx` (for example).
+3. Go to `localhost:8080/adap` to view the site.
