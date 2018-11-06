@@ -31,7 +31,7 @@
         <!--li><?php echo $_SESSION[name]; ?></li-->
         <li><a href="../index.php">Home</a></li>
         <li><a href="../router_management/view_routers.php">Manage Whitelisted Routers</a></li>
-        <li><a href="logout.php">Sign out</a></li>
+        <li><a href="../logout.php">Sign out</a></li>
       </ul>
     </div>
   </nav>
