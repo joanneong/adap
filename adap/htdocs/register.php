@@ -1,5 +1,5 @@
 <?php
-  include '../homepage/navbar_before_login.php';
+  include 'homepage/navbar_before_login.php';
 ?>
 <!DOCTYPE html>
 <head>
@@ -7,8 +7,13 @@
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+  span.reg_err {
+    color: red;
+  }
+  </style>
 </head>
 <body>
   <?php
@@ -59,58 +64,59 @@
             header("location: router_management/view_routers.php");
         }
       }}
-    ?>  
+    ?>
+  <div class="container">
+    <h3 class="grey-text text-darken-3 light center">Register</h3>
+  </div>  
   <div>
     <form name="display" action="register.php" method="POST" >
-      <b>Register a new account: </b>
-      <br><br>
       <div class="row">
         <div class="input-field col s6 offset-s3">
           <label for="company_name">Company Name:</label> <br />
-          <input type="text" name="company_name" value="<?php echo $_POST['company_name']; ?>" placeholder="Company Name"/>
-          <?php echo $company_name_err; ?>
+          <input class="materialize-textarea" type="text" name="company_name" value="<?php echo $_POST['company_name']; ?>" placeholder="Company Name"/>
+          <span class="reg_err"><?php echo $company_name_err; ?></span>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6 offset-s3">
           <label for="email">Email: </label> <br />
-          <input type="email" name="email" value="<?php echo $_POST['email']; ?>" placeholder="Email"/>
-          <?php echo $email_err; ?>
+          <input class="materialize-textarea" type="email" name="email" value="<?php echo $_POST['email']; ?>" placeholder="Email"/>
+          <span class="reg_err"><?php echo $email_err; ?></span>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6 offset-s3">
           <label for="password">Password: </label> <br />
-          <input type="password" name="password" value="" placeholder="Password"/>
-          <?php echo $password_err; ?>
+          <input class="materialize-textarea" type="password" name="password" value="" placeholder="Password"/>
+          <span class="reg_err"><?php echo $password_err; ?></span>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6 offset-s3">
           <label for="password_reenter">Re-enter your password: </label> <br />
-          <input type="password" name="password_reenter" value="" placeholder=""/>
-          <?php echo $password_comp_err; ?>
+          <input class="materialize-textarea" type="password" name="password_reenter" value="" placeholder=""/>
+          <span class="reg_err"><?php echo $password_comp_err; ?></span>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6 offset-s3">
           <label for="contact">Contact Number: </label> <br />
-          <input type="text" name="contact" value="<?php echo $_POST['contact']; ?>" placeholder="Contact"/>
-          <?php echo $contact_err; ?>
+          <input class="materialize-textarea" type="text" name="contact" value="<?php echo $_POST['contact']; ?>" placeholder="Contact"/>
+          <span class="reg_err"><?php echo $contact_err; ?></span>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6 offset-s3">
           <label for="address">Address: </label> <br />
-          <input type="text" name="address" value="<?php echo $_POST['address']; ?>" placeholder="Address"/>
-          <?php echo $address_err; ?>
+          <input class="materialize-textarea" type="text" name="address" value="<?php echo $_POST['address']; ?>" placeholder="Address"/>
+          <span class="reg_err"><?php echo $address_err; ?></span>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6 offset-s3">
           <label for="postal_code">Postal Code: </label> <br />
           <input type="text" name="postal_code" value="<?php echo $_POST['postal_code']; ?>" placeholder="Postal Code"/>
-          <?php echo $postal_code_err; ?>
+          <span class="reg_err"><?php echo $postal_code_err; ?></span>
         </div>
       </div>
       <div class="row">

@@ -1,5 +1,5 @@
 <?php
-  include '../homepage/navbar_before_login.php';
+  include 'homepage/navbar_before_login.php';
 ?>
 <!DOCTYPE html>
 <head>
@@ -7,8 +7,13 @@
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+  #err {
+    color: red;
+  }
+  </style>
 </head>
 <body>
   <?php
@@ -33,11 +38,11 @@
          }
     }
     ?>
+  <div class="container">
+    <h3 class="grey-text text-darken-3 light center">Login</h3>
+  </div>
   <div>
     <form name="display" action="login.php" method="POST" >
-      <b>Login</b>
-      <br><br>
-      Not registered? <a href="register.php"> Sign up here </a>
       <div class="row">
         <div class="input-field col s6 offset-s3">
           <input type="email" name="email" value="<?php echo $_POST[email]; ?>" placeholder="Email" id="" />
@@ -50,10 +55,12 @@
       </div>
       <div class="row">
         <div class="col s4 offset-s4 center">
+          <p id="err"><?php echo $err; ?></p>
           <input type="submit" name="submit" value = "LOGIN"/>
+          Not registered? <a href="register.php"> Sign up here </a>
         </div>
       </div>
-      <?php echo $err; ?>
+      
       <br>
     </form>
   </div>
