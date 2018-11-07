@@ -1,5 +1,5 @@
 <?php
-  include 'homepage/navbar_before_login.php';
+  include '../homepage/navbar_before_login.php';
 ?>
 <!DOCTYPE html>
 <head>
@@ -7,7 +7,7 @@
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <style>
   #err {
@@ -18,7 +18,7 @@
 <body>
   <?php
     // Connect to the database. Please change the password in the following line accordingly
-    require_once 'config.php';
+    require_once '../config.php';
     $param = $_POST['email'];
     $result = pg_query($db, "SELECT * FROM company_account where email = '$param'");
     $row = pg_fetch_assoc($result); 
@@ -35,7 +35,7 @@
       else {
             session_start();
             $_SESSION[email] = $row[email];
-            header("location: router_management/view_routers.php");
+            header("location: ../router_management/view_routers.php");
          }
     }
     ?>
