@@ -6,6 +6,8 @@
 <html lang="en">
 <head>
   <title>ADAP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
@@ -15,25 +17,41 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <style>li {list-style: none;}</style>
   <style></style>
-</head>
-<body>
+
 <STYLE>
    .section {
-	text-align: center;
-  font-size: 200%;
-	}
+  font-size: 100%;
+  color: black;
+  background-color: #white;
 
-	img {
-	width: 40%;
-	margin: auto;
-     vertical-align: middle;
-	}
+  }
+
+  .section {
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 60px;
+}
+
 
  </STYLE>
-  <div class="section" id="search" >
-	<H1><strong>Paste your results here:</strong></H1>
-<br><br>
-</div>
+  <div class="section" id="page" >
+  <H4><strong>Enter your query:</strong></H4>
+<div class="row">
+        <div class="input-field col s6 offset-s3">
+          <form action="../js/search.js">
+          <input type="text" placeholder="Search.." name="search">
+	      <button type="submit"><i class="fa fa-search"></i></button>
+          </div>
+      </div>
+  </div>
 
+
+  <!-- Import jQuery and other relevant JavaScript files -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../js/materialize.min.js"></script>
+  <script type="text/javascript">
+  </script>
+  <script type="text/javascript" src="../js/search.js"></script>
 </body>
 </html>
