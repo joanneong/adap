@@ -1,5 +1,5 @@
 <?php
-  include 'homepage/navbar_before_login.php';
+  include '../homepage/navbar_before_login.php';
 ?>
 
 <!DOCTYPE html>  
@@ -11,7 +11,7 @@
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="../htdocs/css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -35,16 +35,22 @@
 
 
  </STYLE>
-  <div class="section" id="page" >
-  <H4><strong>Enter your query:</strong></H4>
-<div class="row">
+
+      <form action="../js/search.js" method="post">
+      <div class="row">
         <div class="input-field col s6 offset-s3">
-          <form action="../js/search.js">
-          <input type="text" placeholder="Search.." name="search">
-	      <button type="submit"><i class="fa fa-search"></i></button>
-          </div>
+          <input id="mac" type="text" class="materialize-textarea">
+          <label for="mac"></label>
+        </div>
       </div>
-  </div>
+      <div class="row">
+        <div class="col s4 offset-s4 center">
+          <button class="btn waves-effect waves-light btn orange center-align" type="submit" name="submitadd">
+            <i class="material-icons right"></i>
+            <input type="submit">
+          </button>
+        </div>
+      </div>
 
 
   <!-- Import jQuery and other relevant JavaScript files -->

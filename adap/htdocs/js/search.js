@@ -4,7 +4,8 @@
     // Bind submit event of form -- this code snippet is inspired by
     // https://stackoverflow.com/questions/5004233/jquery-ajax-post-example-with-php
 var request;
-var serializedData;
+var macAdd;
+var splitMac;
 
 $("#search").submit(function(event) {
     // Prevent default posting of form
@@ -16,39 +17,39 @@ $("#search").submit(function(event) {
 }
 
   const target = event.target;
-  const mac = target.mac_address.value;
+  const mac = target.mac.value;
 
-  serializedData = 'mac_address=' + mac_address 
-      + '&model=' + model.toLowerCase()
-      + '&version=' + version
-      + '&company_email=' + company_email;
-  console.log("data: " + serializedData);
+  function split() {
+      macAdd = 'mac';
+      splitMac = macAdd.split(" ");
+  }
+
+  console.log("macs:" + splitMac);
 
     // Fire off the request to php/search.php
   request = $.post (
     "../php/search.php",
-    serializedData,
-    indicateAddRouterSuccess
+    splitMac, indicateSearchSuccess
   );
 });
 
-function indicateAddRouterSuccess(response) {
+function indicateSearchSuccess(response) {
     console.log("response: " + response);
     if (response === "SUCCESS!") {
-        var toastHTML = '<span> Results: </span>';
+        var toastHTML = '<span> This mac is verified. </span>';
         M.toast({html: toastHTML, classes: 'rounded green lighten-1'});
         return ;
     }
 
-    if (response === "ERROR!") {
-        var toastHTML = '<span>Error: Invalid Request</span>';
+    if (response === "FAILURE!") {
+        var toastHTML = '<span>This mac is not verified.</span>';
         M.toast({html: toastHTML, classes: 'rounded red darken-1'});
         return ;
     }
 
-    if (response === "Search failed.") {
-        var toastHTML = '<span>Please re-enter your query.</span>';
-        M.toast({html: toastHTML, classes: 'rounded red darken-1'});
-        return ;
+    if (response === "ERROR!") {
+        var toastHTML = '<span>Invalid mac address.</span>';
+        M.toast({ html: toastHTML, classes: 'rounded red darken-1' });
+        return;
     }
 }
