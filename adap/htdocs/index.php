@@ -26,7 +26,7 @@
     <a href="account/register.php" class="waves-effect waves-light btn-large"><i class="material-icons left">create</i>Sign up</a>  
     <br>
     <H4>For common users:</H4>
-    <a href="user_page/check.php" class="waves-effect waves-light btn-large"><i class="material-icons left">perm_scan_wifi</i>Verify Access Points</a>
+    <a href="user_page/check_mac.php" class="waves-effect waves-light btn-large"><i class="material-icons left">perm_scan_wifi</i>Verify Access Points</a>
     <br>
     <br>
   </div>

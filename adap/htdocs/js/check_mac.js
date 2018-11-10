@@ -1,21 +1,16 @@
-/*
-* JavaScript file for the search page.
-*/
-    // Bind submit event of form -- this code snippet is inspired by
-    // https://stackoverflow.com/questions/5004233/jquery-ajax-post-example-with-php
+// Bind submit event of form -- this code snippet is inspired by
+// https://stackoverflow.com/questions/5004233/jquery-ajax-post-example-with-php
 var request;
 var splitMac;
 
-$("#search").submit(function(event) {
-    // Prevent default posting of form
+$("#check_mac").submit(function(event) {
+  // Prevent default posting of form
   event.preventDefault();
 
-    // Abort any pending request
+  // Abort any pending request
   if (request) {
     request.abort();
   }
-
-  console.log("Got nothing123... ");
 
   const target = event.target;
   const mac = target.mac.value;
@@ -26,25 +21,19 @@ $("#search").submit(function(event) {
   }
   */
   splitMac = mac;
-  console.log("mac: " + mac);
 
-  console.log("macs:" + splitMac);
-
-    // Fire off the request to php/search.php
+  // Fire off the request to php/search.php
   request = $.post(
-    "../php/search.php",
+    "../php/check_mac.php",
     splitMac,
     indicateSearchSuccess
   );
-
 });
 
 function indicateSearchSuccess(response) {
-    console.log("Got here");
     console.log("response: " + response);
-    console.log("HELLO");
     if (response === "SUCCESS!") {
-        var toastHTML = '<span> This mac is verified. </span>';
+        var toastHTML = '<span>This mac is verified.</span>';
         M.toast({html: toastHTML, classes: 'rounded green lighten-1'});
         return ;
     }

@@ -12,26 +12,24 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
-  <link rel="stylesheet" type="text/css" href="../css/check.css">
+  <link rel="stylesheet" type="text/css" href="../css/check_mac.css">
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <style>li {list-style: none;}</style>
 </head>
 <body>
- 	<form id="search">
+ 	<form id="check_mac">
       <div class="row">
         <div class="input-field col s6 offset-s3">
-          <input id="mac" type="text" value="<?php echo "$_GET[mac_address]"; ?>"
-          class="materialize-textarea">
+          <input id="mac" class="materialize-textarea">
           <label for="mac"></label>
         </div>
       </div>
       <div class="row">
         <div class="col s4 offset-s4 center">
-          <button class="btn waves-effect waves-light btn orange center-align" type="submit" name="submitadd">
+          <button class="btn waves-effect waves-light btn orange center-align">Submit
             <i class="material-icons right"></i>
-            <input type="submit">
           </button>
         </div>
       </div>
@@ -40,6 +38,6 @@
   <!-- Import jQuery and other relevant JavaScript files -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="../js/materialize.min.js"></script>
-  <script type="text/javascript" src="../js/search.js"></script>
+  <script type="text/javascript" src="../js/check_mac.js"></script>
 </body>
 </html>
