@@ -12,29 +12,13 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+  <link rel="stylesheet" type="text/css" href="../css/check.css">
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <style>li {list-style: none;}</style>
-  <style></style>
-
-<STYLE>
-   .section {
-  font-size: 100%;
-  color: black;
-  background-color: #white;
-
-  }
-
-  .section {
-    padding-top: 50px;
-    padding-right: 30px;
-    padding-bottom: 50px;
-    padding-left: 60px;
-}
-
-
- </STYLE>
+</head>
+<body>
  	<form id="search">
       <div class="row">
         <div class="input-field col s6 offset-s3">

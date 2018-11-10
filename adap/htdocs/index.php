@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link rel="stylesheet" type="text/css" href="css/index.css">
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -17,34 +18,17 @@
   <style></style>
 </head>
 <body>
-<STYLE>
-   .section {
-	text-align: center;
-  font-size: 200%;
-  color: white;
-  background-color: #050303;
-
-	}
-
-	img {
-	width: 40%;
-	margin: auto;
-     vertical-align: middle;
-	}
-
- </STYLE>
   <div class="section" id="WELCOME" >
-	<H1><strong>Welcome</strong></H1>
- <img src="https://i.imgur.com/qxZhg7s.png" alt="adap">
+    <img src="https://i.imgur.com/qxZhg7s.png" alt="adap">
 
-	<H4>For organisations:</H4>
-  <a href="account/login.php" class="waves-effect waves-light btn-large"><i class="material-icons left">account_circle</i>Login</a>
-<a href="account/register.php" class="waves-effect waves-light btn-large"><i class="material-icons left">create</i>Sign up</a>  
-<br>
-  <H4>For common users:</H4>
-<a href="check_mac/search.php" class="waves-effect waves-light btn-large"><i class="material-icons left">perm_scan_wifi</i>Verify Access Points</a>
-<br><br>
-</div>
-
+    <H4>For organisations:</H4>
+    <a href="account/login.php" class="waves-effect waves-light btn-large"><i class="material-icons left">account_circle</i>Login</a>
+    <a href="account/register.php" class="waves-effect waves-light btn-large"><i class="material-icons left">create</i>Sign up</a>  
+    <br>
+    <H4>For common users:</H4>
+    <a href="user_page/check.php" class="waves-effect waves-light btn-large"><i class="material-icons left">perm_scan_wifi</i>Verify Access Points</a>
+    <br>
+    <br>
+  </div>
 </body>
 </html>
