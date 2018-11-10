@@ -68,8 +68,13 @@
             <div class="col s4">
               <div class="card hoverable">
                 <div class="card-content">
-                  <div class="row">
-                    <img class="activator" id="<?php echo $counter ?> router_model=<?php echo $model ?>&router_version=<?php echo $version ?>" src="../img/linksys-EA7300.jpg" height="200">
+                  <div class="row img_container">
+                    <img src="../img/linksys-EA7300.jpg" height="200">
+                    <span class="overlay activator" id="<?php echo $counter ?> router_model=<?php echo $model ?>&router_version=<?php echo $version ?>">
+                      <p class="hint activator" id="<?php echo $counter ?> router_model=<?php echo $model ?>&router_version=<?php echo $version ?>">
+                        Click to see known common vulnerabilities for this router!
+                      </p>
+                    </span>
                   </div>
                   <div class="row">
                       <p>

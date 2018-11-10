@@ -1,6 +1,8 @@
 // Trigger cve view only when image is clicked
-$('img').click(function(event) {
+$('.overlay').click(function(event) {
   var target = event.target;
+
+  console.log("target id is: " + target.id);
   searchCveDatabase(target.id);
 });
 
