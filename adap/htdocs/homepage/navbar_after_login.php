@@ -1,13 +1,3 @@
-<?php
-  // Initialize the session
-  session_start();
-  require_once '../config.php';
-  $result = pg_query($db, "SELECT company_name FROM company_account where email = '$_SESSION[email]'");
-  $row    = pg_fetch_assoc($result);
-  $_SESSION[name] = $row[name];
-  // If session variable is not set it will redirect to login page
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -4,6 +4,7 @@
     include('homepage/navbar_before_login_index.php');
    } else {
    	include ('homepage/navbar_after_login_index.php');
+	//include('homepage/navbar_before_login_index.php');
    }
 ?>
 
