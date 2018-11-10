@@ -1,3 +1,34 @@
+/* hover effect to for view cve hint */
+.img_container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.img_container:hover .overlay {
+  opacity: 0.95;
+}
+
+.hint {
+  width: 80%;
+  cursor: pointer;
+}
+
 /* scrolling mechanism for cve content */
 .cve {
   height: 65%;

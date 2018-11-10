@@ -2,7 +2,7 @@
 $(document).ready(triggerTimeout);
 
 function triggerTimeout() {
-  window.setTimeout(redirectToViewPage, 2000);
+  window.setTimeout(redirectToViewPage, 1000);
 
   serializedData = 'mac_address=' + mac_address;
   // Fire off the request to php/delete_router.php
