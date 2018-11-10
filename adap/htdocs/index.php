@@ -9,7 +9,7 @@
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="../htdocs/css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -38,11 +38,11 @@
  <img src="https://i.imgur.com/qxZhg7s.png" alt="adap">
 
 	<H4>For organisations:</H4>
-  <a href="../htdocs/login.php" class="waves-effect waves-light btn-large"><i class="material-icons left">account_circle</i>Login</a>
-<a href="../htdocs/register.php" class="waves-effect waves-light btn-large"><i class="material-icons left">create</i>Sign up</a>  
+  <a href="account/login.php" class="waves-effect waves-light btn-large"><i class="material-icons left">account_circle</i>Login</a>
+<a href="account/register.php" class="waves-effect waves-light btn-large"><i class="material-icons left">create</i>Sign up</a>  
 <br>
   <H4>For common users:</H4>
-<a href="../htdocs/search.php" class="waves-effect waves-light btn-large"><i class="material-icons left">perm_scan_wifi</i>Verify Access Points</a>
+<a href="check_mac/search.php" class="waves-effect waves-light btn-large"><i class="material-icons left">perm_scan_wifi</i>Verify Access Points</a>
 <br><br>
 </div>
 
