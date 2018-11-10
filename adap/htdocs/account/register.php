@@ -1,5 +1,5 @@
 <?php
-  include 'homepage/navbar_before_login.php';
+  include '../homepage/navbar_before_login.php';
 ?>
 <!DOCTYPE html>
 <head>
@@ -7,7 +7,7 @@
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <style>
   span.reg_err {
@@ -18,7 +18,7 @@
 <body>
   <?php
     // Connect to the database. Please change the password in the following line accordingly
-    require_once 'config.php';
+    require_once '../config.php';
     if (isset($_POST['submit'])) { // Submit the update SQL command
       $company_name = $_POST['company_name'];
       $company_name_bool = false;
