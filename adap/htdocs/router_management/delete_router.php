@@ -1,9 +1,8 @@
 <?php
-  // session_start();
-  // if(!isset($_SESSION[email]) || empty($_SESSION[email]))
-  //   include('headerN.php');
-  // else include ('headerHi.php');
-  include '../homepage/navbar_after_login.php';
+  session_start();
+  if(!isset($_SESSION[email]) || empty($_SESSION[email]))
+    include('../homepage/navbar_before_login.php');
+  else include ('../homepage/navbar_after_login.php');
 ?>
 <!DOCTYPE html>
 <head>

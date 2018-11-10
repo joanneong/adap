@@ -15,11 +15,11 @@
 </head>
 <body>
     <nav class="grey darken-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="../adap/index.php" class="brand-logo" style="left:0%">ADAP</a>
+    <div class="nav-wrapper container"><a id="logo-container" href="../index.php" class="brand-logo" style="left:0%">ADAP</a>
       <ul class="right">
         <!--li><?php echo $_SESSION[name]; ?></li-->
-        <li><a href="../adap/index.php">Home</a></li>
-        <li><a href="../adap/login.php">Login</a></li>
+        <li><a href="../index.php">Home</a></li>
+        <!--li><a href="../account/login.php">Login</a></li-->
       </ul>
     </div>
   </nav>

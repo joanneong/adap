@@ -25,7 +25,9 @@ $("#edit_router").submit(function(event) {
   serializedData = 'mac_address=' + mac_address 
       + '&model=' + model.toLowerCase()
       + '&version=' + version
-      + '&original_mac_addr=' + original_mac_addr;
+      + '&original_mac_addr=' + original_mac_addr
+      + '&original_model=' + original_model
+      + '&original_version=' + original_version;
   console.log("data: " + serializedData);
 
   // Fire off the request to php/add_router.php
@@ -53,6 +55,12 @@ function indicateEditRouterSuccess(response) {
 
     if (response === "Edit failed.") {
       var toastHTML = '<span>Unable to update router information!</span>';
+      M.toast({html: toastHTML, classes: 'rounded red darken-1'});
+      return ;
+    }
+
+    if (response === "NO UPDATE!") {
+      var toastHTML = '<span>No fields have been updated!</span>';
       M.toast({html: toastHTML, classes: 'rounded red darken-1'});
       return ;
     }

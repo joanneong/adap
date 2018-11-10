@@ -1,5 +1,8 @@
 <?php
-  include '../homepage/navbar_before_login.php';
+   session_start();
+   if(!isset($_SESSION[email]) || empty($_SESSION[email]))
+     include('../homepage/navbar_before_login.php');
+   else include ('../homepage/navbar_after_login.php');
 ?>
 <!DOCTYPE html>
 <head>
@@ -57,7 +60,7 @@
 
       if (($company_name_bool == true) && ($email_bool == true) && ($password_bool == true) && ($contact_bool == true) && ($address_bool == true) && ($postal_code_bool == true)) {
         $result = pg_query($db, "INSERT INTO company_account VALUES ('$company_name','$email','$password','$contact','$address','$postal_code')");
-        if (!$result)  $err = 'Account was already created before. Would you like to <a href="../adap/login.php">log in</a> instead?';
+        if (!$result)  $err = 'Account was already created before. Would you like to <a href="login.php">log in</a> instead?';
         else {
             header("location: register_success.php");
         }
