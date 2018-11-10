@@ -1,9 +1,8 @@
 <?php
-  // session_start();
-  // if(!isset($_SESSION[email]) || empty($_SESSION[email]))
-  //   include('headerN.php');
-  // else include ('headerHi.php');
-  include '../homepage/navbar_after_login.php';
+   session_start();
+   if(!isset($_SESSION[email]) || empty($_SESSION[email]))
+     include('../homepage/navbar_before_login.php');
+   else include ('../homepage/navbar_after_login.php');
 ?>
 <!DOCTYPE html>
 <head>
@@ -61,8 +60,7 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="../js/materialize.min.js"></script>
   <script type="text/javascript">
-    // var company_email ='<?php echo $_SESSION[email];?>';
-    var company_email = 'cs3235@gmail.com';
+    var company_email ='<?php echo $_SESSION[email];?>';
   </script>
   <script type="text/javascript" src="../js/add_router.js"></script>
 </body>

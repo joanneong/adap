@@ -1,9 +1,8 @@
 <?php
-  // session_start();
-  // if(!isset($_SESSION[email]) || empty($_SESSION[email]))
-  //   include('headerN.php');
-  // else include ('headerHi.php');
-  include '../homepage/navbar_after_login.php';
+  session_start();
+  if(!isset($_SESSION[email]) || empty($_SESSION[email]))
+    include('../homepage/navbar_before_login.php');
+  else include ('../homepage/navbar_after_login.php');
 ?>
 <!DOCTYPE html>
 <head>
@@ -62,6 +61,8 @@
   <script type="text/javascript" src="../js/materialize.min.js"></script>
   <script type="text/javascript">
     var original_mac_addr = '<?php echo "$_GET[mac_address]";?>';
+    var original_model = '<?php echo "$_GET[model]";?>';
+    var original_version = '<?php echo "$_GET[version]";?>';
   </script>
   <script type="text/javascript" src="../js/edit_router.js"></script>
 </body>
