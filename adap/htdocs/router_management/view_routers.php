@@ -41,12 +41,9 @@
     <div class="row">
         <?php
           require_once '../config.php';
-          /*$sql = "SELECT *
-                  FROM router
-                  WHERE company_email = '$_SESSION[email]'";*/
           $sql = "SELECT *
                   FROM router
-                  WHERE company_email = 'cs3235@gmail.com'";
+                  WHERE company_email = '$_SESSION[email]'";
           $result = pg_query($db, $sql);
 
           // If the company has not whitelisted any router
