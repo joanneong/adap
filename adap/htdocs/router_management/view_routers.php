@@ -1,10 +1,9 @@
 <?php
-  #session_start();
-  #if(!isset($_SESSION[email]) || empty($_SESSION[email]))
-  #  include('headerN.php');
-  #else include ('headerHi.php');
-  include '../homepage/navbar_after_login.php';
- ?>
+  session_start();
+  if(!isset($_SESSION[email]) || empty($_SESSION[email]))
+    include('../homepage/navbar_before_login.php');
+  else include ('../homepage/navbar_after_login.php');
+?>
 <!DOCTYPE html>
 <head>
   <title>ADAP</title>
@@ -42,12 +41,9 @@
     <div class="row">
         <?php
           require_once '../config.php';
-          /*$sql = "SELECT *
-                  FROM router
-                  WHERE company_email = '$_SESSION[email]'";*/
           $sql = "SELECT *
                   FROM router
-                  WHERE company_email = 'cs3235@gmail.com'";
+                  WHERE company_email = '$_SESSION[email]'";
           $result = pg_query($db, $sql);
 
           // If the company has not whitelisted any router

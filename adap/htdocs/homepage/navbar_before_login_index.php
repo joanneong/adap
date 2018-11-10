@@ -5,7 +5,7 @@
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -15,12 +15,11 @@
 </head>
 <body>
     <nav class="grey darken-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="../index.php" class="brand-logo" style="left:0%">ADAP</a>
+    <div class="nav-wrapper container"><a id="logo-container" href="index.php" class="brand-logo" style="left:0%">ADAP</a>
       <ul class="right">
         <!--li><?php echo $_SESSION[name]; ?></li-->
-        <li><a href="../index.php">Home</a></li>
-        <li><a href="../router_management/view_routers.php">Manage Whitelisted Routers</a></li>
-        <li><a href="../account/logout.php">Sign out</a></li>
+        <li><a href="index.php">Home</a></li>
+        <!--li><a href="account/login.php">Login</a></li-->
       </ul>
     </div>
   </nav>

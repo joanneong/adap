@@ -1,5 +1,8 @@
 <?php
-  include '../homepage/navbar_before_login.php';
+   session_start();
+   if(!isset($_SESSION[email]) || empty($_SESSION[email]))
+     include('../homepage/navbar_before_login.php');
+   else include ('../homepage/navbar_after_login.php');
 ?>
 <!DOCTYPE html>
 <head>
@@ -35,7 +38,7 @@
       else {
             session_start();
             $_SESSION[email] = $row[email];
-            header("location: ../router_management/view_routers.php");
+            header("location: ../index.php");
          }
     }
     ?>
