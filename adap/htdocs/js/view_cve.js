@@ -45,7 +45,9 @@ function parseDatabaseResponse(response) {
     for (i = 0; i < numOfResponses; i++) {
       var currResult = results[i];
 
-      fullResult += "==================\n"
+      if (i != 0) {
+        fullResult += "------------------------------\n"
+      }
 
       fullResult += "CVE ID: " + currResult.cve_id + "\n\n";
       fullResult += "Severity: " + currResult.cve_severity + "\n\n";
@@ -62,4 +64,7 @@ function parseDatabaseResponse(response) {
 function showCveDetails(result) {
   var obj = $("#cve_content" + counter).text(result);
   obj.html(obj.html().replace(/\\n/g,'<br><br>'));
+  obj.html(obj.html().replace("LOW", '<span class="new badge" data-badge-caption="" style="margin-right: 40%;">LOW</span>'));
+  obj.html(obj.html().replace("MEDIUM", '<span class="new badge orange" data-badge-caption="" style="margin-right: 40%;">MEDIUM</span>'));
+  obj.html(obj.html().replace("HIGH", '<span class="new badge red" data-badge-caption="" style="margin-right: 40%;">HIGH</span>'));
 }

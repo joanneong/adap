@@ -99,7 +99,7 @@
                   <span class="card-title red-text text-darken-4">CVE Information<i class="material-icons right">close</i></span>
                   <p><b>Model:</b> <?php echo $model ?></p>
                   <p><b>Version:</b> <?php echo $version ?></p>
-                  <span style="white-space:pre-wrap;" class="col s12 cve" id="cve_content<?php echo $counter ?>"></span>
+                  <span style="white-space:pre-wrap; cursor:default;" class="col s12 cve" id="cve_content<?php echo $counter ?>"></span>
                 </div>
               </div>
             </div>
