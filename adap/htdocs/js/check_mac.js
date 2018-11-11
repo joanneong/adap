@@ -1,7 +1,6 @@
 // Bind submit event of form -- this code snippet is inspired by
 // https://stackoverflow.com/questions/5004233/jquery-ajax-post-example-with-php
 var request;
-var splitMac;
 
 $("#check_mac").submit(function(event) {
   // Prevent default posting of form
@@ -15,17 +14,18 @@ $("#check_mac").submit(function(event) {
   const target = event.target;
   const mac = target.mac.value;
 
+  console.log("crazybee");
+
   /*function split() {
       macAdd = 'mac';
       splitMac = macAdd.split(" ");
   }
   */
-  splitMac = mac;
 
   // Fire off the request to php/search.php
   request = $.post(
     "../php/check_mac.php",
-    splitMac,
+    mac,
     indicateSearchSuccess
   );
 });
