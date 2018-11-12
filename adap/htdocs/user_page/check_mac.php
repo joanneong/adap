@@ -22,8 +22,8 @@
  	<form id="check_mac">
       <div class="row">
         <div class="input-field col s6 offset-s3">
-          <input id="mac" class="materialize-textarea">
-          <label for="mac"></label>
+          <input id="mac_address" class="materialize-textarea">
+          <label for="mac_address"></label>
         </div>
       </div>
       <div class="row">
