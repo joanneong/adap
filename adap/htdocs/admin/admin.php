@@ -78,7 +78,7 @@
                       <input type='hidden' name='postal_code' value='$postal_code'>
                       <input type='hidden' name='approved' value='$approved'>
 
-                      <button type='submit' name='approve$counter' class='btn waves-effect waves-light green'>Approve</button>
+                      <button type='submit' name='approve$counter' class='btn waves-effect waves-light green lighten-2'>Approve</button>
                     </form>
                   </td>
                 </div>";
@@ -94,7 +94,7 @@
                       <input type='hidden' name='postal_code' value='$postal_code'>
                       <input type='hidden' name='approved' value='$approved'>
 
-                      <button type='submit' name='disapprove$counter' class='btn waves-effect waves-light red'>Disapprove</button>
+                      <button type='submit' name='disapprove$counter' class='btn waves-effect waves-light red accent-2'>Disapprove</button>
                     </form>
                   </td>
                 </div>";
