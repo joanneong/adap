@@ -1,0 +1,7 @@
+
+BSSID, First time seen, Last time seen, channel, Speed, Privacy, Cipher, Authentication, Power, # beacons, # IV, LAN IP, ID-length, ESSID, Key
+6C:72:20:12:6F:C8, 2018-11-12 12:19:40, 2018-11-12 12:22:29,  1, 195, WPA2 WPA, CCMP TKIP, PSK, -17,      209,     1056,   0.  0.  0.  0,  10, dlink-6FC8, 
+
+Station MAC, First time seen, Last time seen, Power, # packets, BSSID, Probed ESSIDs
+48:02:2A:1C:E1:0F, 2018-11-12 12:19:40, 2018-11-12 12:22:29, -31,     1077, 6C:72:20:12:6F:C8,
+
