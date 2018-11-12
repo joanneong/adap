@@ -2,8 +2,11 @@
   // Connect to the database
   include("../config.php");
 
-  $trimmed = trim($_POST[mac_address]);
-//  echo $trimmed;
+  echo "WE ARE HERE";
+
+//  $_POST['macstring']::json->'';
+
+/*
   $query  = "SELECT * FROM router WHERE mac_address = '$trimmed'";
 //  echo $query;
   $result = pg_query($db, $query);
@@ -17,5 +20,5 @@
   else {
     echo "FAILURE!";
   }
-
+*/
 ?>

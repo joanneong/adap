@@ -12,16 +12,24 @@ $("#check_mac").submit(function(event) {
     request.abort();
   }
 
+//console.log("hello!");
+
   const target = event.target;
   const mac_address = target.mac_address.value;
+  
+  var str = mac_address;
+  var mac_split = str.split(/[ ,]+/).filter(Boolean);
 
-  serializedData = 'mac_address=' + mac_address;
-  console.log("DATA8: " + serializedData);
+  console.log(mac_split);
+  serializedData = 'mac_address=' + mac_split;
+  console.log("DATA: " + serializedData);
+
+  var macstring = JSON.stringify(mac_split);
 
   // Fire off the request to php/search.php
   request = $.post(
     "../php/check_mac.php",
-    serializedData,
+    macstring,
     indicateSearchSuccess
   );
 });
