@@ -20,7 +20,7 @@
 </head>
 <body>
   <div class="row">
-      <div class="col s10 page-content">
+      <div class="col s12 page-content">
         <!-- Teal page content  -->
         <h4 class="grey-text center text-darken-2">Admin</h3>
         <div class="container center">
@@ -33,6 +33,8 @@
               <th class="grey-text text-darken-2">Address</th>
               <th class="grey-text text-darken-2">Postal code</th>
               <th class="grey-text text-darken-2">Approved</th>
+              <!-- Dummy to extend the table border -->
+              <th></th>
             </tr>
           </thead>
           <div id="message">
@@ -65,39 +67,45 @@
                 echo "<td align='center'>" .$contact . "</td>";
                 echo "<td align='center'>" .$address . "</td>";
                 echo "<td align='center'>" .$postal_code . "</td>";
-                echo "<td align='center'>" .$approved . "</td>";
 
-                echo "
-                <div class = 'approve'>
-                  <td align='center'>
-                    <form name='approve$counter' action='admin_approve.php' method='POST'>
-                      <input type='hidden' name='company_name' value='$name'>
-                      <input type='hidden' name='email' value='$email'>
-                      <input type='hidden' name='contact' value='$contact'>
-                      <input type='hidden' name='address' value='$address'>
-                      <input type='hidden' name='postal_code' value='$postal_code'>
-                      <input type='hidden' name='approved' value='$approved'>
+                if ($approved == 'f') {
+                  echo "<td align='center' style='text-align:center;'>" .NO. "</td>";
+                  echo "
+                    <div class = 'approve'>
+                      <td align='center'>
+                        <form name='approve$counter' action='admin_approve.php' method='POST'>
+                          <input type='hidden' name='company_name' value='$name'>
+                          <input type='hidden' name='email' value='$email'>
+                          <input type='hidden' name='contact' value='$contact'>
+                          <input type='hidden' name='address' value='$address'>
+                          <input type='hidden' name='postal_code' value='$postal_code'>
+                          <input type='hidden' name='approved' value='$approved'>
 
-                      <button type='submit' name='approve$counter' class='btn waves-effect waves-light green lighten-2'>Approve</button>
-                    </form>
-                  </td>
-                </div>";
-           
-                echo "
-                <div class = 'disapprove'>
-                  <td align='center'>
-                    <form name='disapprove$counter' action='admin_disapprove.php' method='POST'>
-                      <input type='hidden' name='company_name' value='$name'>
-                      <input type='hidden' name='email' value='$email'>
-                      <input type='hidden' name='contact' value='$contact'>
-                      <input type='hidden' name='address' value='$address'>
-                      <input type='hidden' name='postal_code' value='$postal_code'>
-                      <input type='hidden' name='approved' value='$approved'>
+                          <button type='submit' name='approve$counter' class='btn waves-effect waves-light green lighten-2'>Approve</button>
+                        </form>
+                      </td>
+                    </div>";
+                }
 
-                      <button type='submit' name='disapprove$counter' class='btn waves-effect waves-light red accent-2'>Disapprove</button>
-                    </form>
-                  </td>
-                </div>";
+                if ($approved == 't') {
+                  echo "<td align='center' style='text-align:center;'>" .YES. "</td>";
+
+                  echo "
+                  <div class = 'disapprove'>
+                    <td align='center'>
+                      <form name='disapprove$counter' action='admin_disapprove.php' method='POST'>
+                        <input type='hidden' name='company_name' value='$name'>
+                        <input type='hidden' name='email' value='$email'>
+                        <input type='hidden' name='contact' value='$contact'>
+                        <input type='hidden' name='address' value='$address'>
+                        <input type='hidden' name='postal_code' value='$postal_code'>
+                        <input type='hidden' name='approved' value='$approved'>
+
+                        <button type='submit' name='disapprove$counter' class='btn waves-effect waves-light red accent-2'>Disapprove</button>
+                      </form>
+                    </td>
+                  </div>";
+                }
 
                 echo "</tr>";
 
