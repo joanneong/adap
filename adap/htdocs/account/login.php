@@ -22,15 +22,16 @@
   <?php
     // Connect to the database. Please change the password in the following line accordingly
     require_once '../config.php';
-    $param = $_POST['email'];
-    $result = pg_query($db, "SELECT * FROM company_account where email = '$param'");
+    $email = test_input($_POST['email']);
+    $password = test_input($_POST['password']);
+
+    $result = pg_query($db, "SELECT * FROM company_account where email = '$email'");
     $row = pg_fetch_assoc($result); 
     //$sql = 'SELECT * FROM company_account';
     //$result = pg_prepare($db, "", $sql);
-    //$result = pg_execute($db, "", $param);
+    //$result = pg_execute($db, "", $email);
     //$row = pg_fetch_all($result);
     if (isset($_POST['submit'])) {
-      if (trim($_POST['email'])==null) $err = 'Please enter email';
       if (trim($email)==null) $err = 'Please enter email';
       else if (trim($password)==null) $err='Please enter password';
       else if ($row['email']==null) $err = 'Invalid email address';
