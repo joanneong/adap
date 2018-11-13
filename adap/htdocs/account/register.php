@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+  <link rel="stylesheet" type="text/css" href="../css/add_router.css">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <style>
   span.reg_err {
@@ -122,7 +123,7 @@
       </div>
       <div class="row">
         <div class="col s4 offset-s4 center">
-          <input type="submit" name="submit" value = "REGISTER"/>
+        <button class="btn waves-effect waves-light btn orange center-align" type="submit" name="submit">Register</button>
         </div>
       </div>
       <?php echo $err; ?>

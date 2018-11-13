@@ -5,6 +5,7 @@
 DROP TABLE IF EXISTS company_account CASCADE;
 DROP TABLE IF EXISTS router CASCADE;
 DROP TABLE IF EXISTS cve CASCADE;
+DROP TABLE IF EXISTS admin CASCADE;
 
 CREATE TABLE company_account (
 	company_name VARCHAR(64) NOT NULL,
@@ -30,6 +31,11 @@ CREATE TABLE cve (
 	cve_severity VARCHAR(7),
 	cve_description VARCHAR(500),
 	PRIMARY KEY (router_model, router_version, cve_id)
+);
+
+CREATE TABLE admin (
+    username VARCHAR(355) PRIMARY KEY,
+    password VARCHAR(50) NOT NULL
 );
 
 /* SET datestyle = "ISO, YMD"; */

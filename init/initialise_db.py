@@ -87,6 +87,7 @@ def main():
   # Create dummy account and data
   cursor.execute(open("sql/company_account.sql", "r").read())
   cursor.execute(open("sql/router.sql", "r").read())
+  cursor.execute(open("sql/admin.sql", "r").read())
 
   # Parse JSON files from https://nvd.nist.gov/vuln/data-feeds#JSON_FEED
   directory = "json"
