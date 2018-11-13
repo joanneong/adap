@@ -11,7 +11,7 @@
 /* disable resizing for text area */
 textarea {
   min-height: 50px;
-  max-height: 300px;
+  max-height: 150px;
   resize: none !important;
   overflow-y: scroll;
 }

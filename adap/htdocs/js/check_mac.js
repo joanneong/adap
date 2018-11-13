@@ -26,20 +26,22 @@ $("#check_mac").submit(function(event) {
 
   const target = event.target;
   const mac_address = target.mac_address.value;
-  
-  var str = mac_address;
-  var mac_split = str.split(/[ ,]+/).filter(Boolean);
+  console.log("original data: " + mac_address);
 
-  console.log(mac_split);
-  serializedData = 'mac_address=' + mac_split;
-  console.log("DATA: " + serializedData);
+  // Split string based on newline, whitespace or comma and store into an array
+  var split_mac = mac_address.split(/[\r\n ,]/g);
+  console.log(split_mac);
 
-  var macstring = JSON.stringify(mac_split);
+  // Convert to Json array to send to PHP
+  var split_mac_json = JSON.stringify(split_mac);
+  console.log("Json array: " + split_mac_json);
+
+  serializedData = "split_mac_json=" + split_mac_json;
 
   // Fire off the request to php/search.php
   request = $.post(
     "../php/check_mac.php",
-    macstring,
+    serializedData,
     indicateSearchSuccess
   );
 });

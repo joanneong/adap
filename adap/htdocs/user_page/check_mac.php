@@ -30,8 +30,7 @@
       </div>
       <form id="check_mac">
         <div class="row">
-          <textarea id="mac_address" data-autoresize autofocus>
-          </textarea>
+          <textarea id="mac_address" data-autoresize autofocus></textarea>
         </div>
         <div class="row">
           <div class="col s4 offset-s4 center">
@@ -41,6 +40,10 @@
           </div>
         </div>
       </form>
+    </div>
+
+    <div class="row" id="verification_results">
+      <span style="white-space:pre-wrap; cursor:default;"></span>
     </div>
 
   <!-- Import jQuery and other relevant JavaScript files -->
