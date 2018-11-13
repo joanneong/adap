@@ -1,3 +1,15 @@
+// Allow autoresizing for text area
+// Credit: https://stephanwagner.me/auto-resizing-textarea
+jQuery.each(jQuery('textarea[data-autoresize]'), function() {
+
+  var offset = this.offsetHeight - this.clientHeight;
+
+  var resizeTextarea = function(el) {
+      jQuery(el).css('height', 'auto').css('height', el.scrollHeight + offset);
+  };
+  jQuery(this).on('keyup input', function() { resizeTextarea(this); }).removeAttr('data-autoresize');
+});
+
 // Bind submit event of form -- this code snippet is inspired by
 // https://stackoverflow.com/questions/5004233/jquery-ajax-post-example-with-php
 var request;
@@ -11,8 +23,6 @@ $("#check_mac").submit(function(event) {
   if (request) {
     request.abort();
   }
-
-//console.log("hello!");
 
   const target = event.target;
   const mac_address = target.mac_address.value;

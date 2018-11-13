@@ -19,21 +19,29 @@
   <style>li {list-style: none;}</style>
 </head>
 <body>
- 	<form id="check_mac">
+  <div class="container">
+    <div class="row">
+      <h3 class="grey-text text-darken-3 light center">Verify MAC address</h3>
+    </div>
+
+    <div id="mac_input" class="row">
       <div class="row">
-        <div class="input-field col s6 offset-s3">
-          <input id="mac_address" class="materialize-textarea">
-          <label for="mac_address"></label>
-        </div>
+        <span class="row">Please input your MAC address(es) below:</span>
       </div>
-      <div class="row">
-        <div class="col s4 offset-s4 center">
-          <button class="btn waves-effect waves-light btn orange center-align">Submit
-            <i class="material-icons right"></i>
-          </button>
+      <form id="check_mac">
+        <div class="row">
+          <textarea id="mac_address" data-autoresize autofocus>
+          </textarea>
         </div>
-      </div>
-  </form>
+        <div class="row">
+          <div class="col s4 offset-s4 center">
+            <button class="btn waves-effect waves-light btn orange center-align">Submit
+              <i class="material-icons right"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
 
   <!-- Import jQuery and other relevant JavaScript files -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
