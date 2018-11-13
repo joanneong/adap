@@ -31,9 +31,10 @@
     //$row = pg_fetch_all($result);
     if (isset($_POST['submit'])) {
       if (trim($_POST['email'])==null) $err = 'Please enter email';
-      else if (trim($_POST['password'])==null) $err='Please enter password';
+      if (trim($email)==null) $err = 'Please enter email';
+      else if (trim($password)==null) $err='Please enter password';
       else if ($row['email']==null) $err = 'Invalid email address';
-      else if ($row['password']<>$_POST['password']) $err = 'Invalid password';
+      else if ($row['password']<>$password) $err = 'Invalid password';
       else if (!(strcasecmp($row['identification'], 't') == 0)) $err = 'Account is not yet verified!';
       else {
             session_start();
@@ -41,12 +42,20 @@
             header("location: ../index.php");
          }
     }
+
+    function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    }
+
     ?>
   <div class="container">
     <h3 class="grey-text text-darken-3 light center">Login</h3>
   </div>
   <div>
-    <form name="display" action="login.php" method="POST" >
+    <form name="display" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" >
       <div class="row">
         <div class="input-field col s6 offset-s3">
           <input type="email" name="email" value="<?php echo $_POST[email]; ?>" placeholder="Email" id="" />
