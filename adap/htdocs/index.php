@@ -50,4 +50,12 @@
 </div>
 
 </body>
+<footer class="page-footer grey darken-1">
+          <div class="footer-copyright grey darken-1">
+            <div class="container">
+            © 2018 Copyright CS3235 Team 4
+            <a class="grey-text text-lighten-4 right" href="admin/admin_login.php">Admin</a>
+            </div>
+          </div>
+        </footer>
 </html>

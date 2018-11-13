@@ -1,8 +1,5 @@
 <?php
-   session_start();
-   if(!isset($_SESSION[email]) || empty($_SESSION[email]))
-     include('../homepage/navbar_before_login.php');
-   else include ('../homepage/navbar_after_login.php');
+  include('admin_navbar.php');
 ?>
 <!DOCTYPE html>
 <head>
@@ -23,34 +20,30 @@
   <?php
     // Connect to the database. Please change the password in the following line accordingly
     require_once '../config.php';
-    $param = $_POST['email'];
-    $result = pg_query($db, "SELECT * FROM company_account where email = '$param'");
+    $param = $_POST['username'];
+    $result = pg_query($db, "SELECT * FROM admin where username = '$param'");
     $row = pg_fetch_assoc($result); 
-    //$sql = 'SELECT * FROM company_account';
-    //$result = pg_prepare($db, "", $sql);
-    //$result = pg_execute($db, "", $param);
-    //$row = pg_fetch_all($result);
+
     if (isset($_POST['submit'])) {
-      if (trim($_POST['email'])==null) $err = 'Please enter email';
+      if (trim($_POST['username'])==null) $err = 'Please enter username';
       else if (trim($_POST['password'])==null) $err='Please enter password';
-      else if ($row['email']==null) $err = 'Invalid email address';
+      else if ($row['username']==null) $err = 'Invalid admin username';
       else if ($row['password']<>$_POST['password']) $err = 'Invalid password';
-      else if (!(strcasecmp($row['identification'], 't') == 0)) $err = 'Account is not yet verified!';
       else {
             session_start();
-            $_SESSION[email] = $row[email];
-            header("location: ../index.php");
+            $_SESSION[username] = $row[username];
+            header("location: admin.php");
          }
     }
     ?>
   <div class="container">
-    <h3 class="grey-text text-darken-3 light center">Login</h3>
+    <h3 class="grey-text text-darken-3 light center">Admin Login</h3>
   </div>
   <div>
-    <form name="display" action="login.php" method="POST" >
+    <form name="display" action="admin_login.php" method="POST" >
       <div class="row">
         <div class="input-field col s6 offset-s3">
-          <input type="email" name="email" value="<?php echo $_POST[email]; ?>" placeholder="Email" id="" />
+          <input type="text" name="username" value="<?php echo $_POST[username]; ?>" placeholder="Username" id="" />
         </div>
       </div>
       <div class="row">
@@ -61,8 +54,8 @@
       <div class="row">
         <div class="col s4 offset-s4 center">
           <p id="err"><?php echo $err; ?></p>
-          <button class="btn waves-effect waves-light btn orange center-align" type="submit" name="submit">Login</button>
-          <p>Not registered? Sign up <a href="register.php"> here </a></p>
+          <button class="btn waves-effect waves-light btn orange center-align" type="submit" name="submit">Login
+          </button>
         </div>
       </div>
       
