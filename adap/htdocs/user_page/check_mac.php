@@ -26,6 +26,12 @@
 
     <div id="mac_input" class="row">
       <div class="row">
+        <span class="row">Feel free to verify your MAC address(es) here!</span>
+        <span class="row">
+          The recommended input format is to put each MAC address on a new line.
+        </span>
+      </div>
+      <div class="row">
         <span class="row">Please input your MAC address(es) below:</span>
       </div>
       <form id="check_mac">
@@ -42,8 +48,17 @@
       </form>
     </div>
 
-    <div class="row" id="verification_results">
-      <span style="white-space:pre-wrap; cursor:default;"></span>
+    <div class="row" id="results_section" style="display:none;">
+      <div class="col s12">
+        <ul class="tabs">
+          <li class="tab col s3"><a href="#whitelisted">Whitelisted</a></li>
+          <li class="tab col s3"><a href="#not_whitelisted">Not whitelisted</a></li>
+          <li class="tab col s3"><a href="#invalid">Invalid</a></li>
+        </ul>
+      </div>
+      <div id="whitelisted" class="col s12" style="white-space:pre-wrap;"></div>
+      <div id="not_whitelisted" class="col s12" style="white-space:pre-wrap;"></div>
+      <div id="invalid" class="col s12" style="white-space:pre-wrap;"></div>
     </div>
 
   <!-- Import jQuery and other relevant JavaScript files -->

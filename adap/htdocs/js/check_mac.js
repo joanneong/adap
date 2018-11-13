@@ -1,3 +1,8 @@
+// Initialist tabs
+$(document).ready(function(){
+  $('.tabs').tabs();
+});
+
 // Allow autoresizing for text area
 // Credit: https://stephanwagner.me/auto-resizing-textarea
 jQuery.each(jQuery('textarea[data-autoresize]'), function() {
@@ -38,25 +43,45 @@ $("#check_mac").submit(function(event) {
 
   serializedData = "split_mac_json=" + split_mac_json;
 
-  // Fire off the request to php/search.php
+  // Fire off the request to php/check_mac.php
   request = $.post(
     "../php/check_mac.php",
     serializedData,
-    indicateSearchSuccess
+    showVerificationResults
   );
 });
 
-function indicateSearchSuccess(response) {
-    console.log("response: " + response);
-    if (response === "SUCCESS!") {
-        var toastHTML = '<span>This mac is verified.</span>';
-        M.toast({html: toastHTML, classes: 'rounded green lighten-1'});
-        return ;
-    }
+// Displays the result for each type (e.g. whitelisted, invalid etc.)
+function showResultsForType(type, arr) {
+  const NO_RESULTS = "There are no input MAC addresses that are ";
+  var id = "#" + type;
+  var length = $(arr).length;
 
-    if (response === "FAILURE!") {
-        var toastHTML = '<span>This mac is not verified.</span>';
-        M.toast({html: toastHTML, classes: 'rounded red darken-1'});
-        return ;
+  if (length == 0) {
+    type = type.replace(/_/g, " ");
+    $(id).text(NO_RESULTS + type);
+  } else { 
+    var fullResult = "";
+    for (i = 0; i < length; i++) {
+      fullResult += arr[i];
+      fullResult += "\n";
     }
+    
+    $(id).text(fullResult);
+  }
+}
+
+function showVerificationResults(response) {
+  console.log("response: " + response);
+  response = JSON.parse(response);
+
+  var whitelisted = response.whitelisted;
+  var not_whitelisted = response.not_whitelisted;
+  var invalid = response.invalid;
+
+  showResultsForType("whitelisted", whitelisted);
+  showResultsForType("not_whitelisted", not_whitelisted);
+  showResultsForType("invalid", invalid);
+
+  $('#results_section').show();
 }
