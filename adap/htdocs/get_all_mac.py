@@ -10,14 +10,17 @@ elif platform.system() == "Darwin":
     ifconfig = check_output(["/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport","-s"])
     words = ifconfig.split("\n")
     for x in range(1,len(words)):
-            mac = re.search(r'(((.)+\s([0-9A-F]{2}[:-]){5}|([0-9A-F]{2}))+)', words[x], re.I)
+            mac = re.search(r'(((.)+\s)+([0-9A-F]{2}[:-]){5}|([0-9A-F]{2}))+', words[x], re.I)
             if mac is not None:
-                mac_addr = mac.group().split()
+                mac_addr = mac.group()
+                mac_addr_split_index = mac_addr.rfind(" ")
+                ssid = (mac_addr[:mac_addr_split_index]).strip()
+                bssid = (mac_addr[mac_addr_split_index:]).strip()
                 macList = []
-                if mac_addr[0] in listing:
-                    macList = listing.get(mac_addr[0])
-                macList.append(mac_addr[1])
-                listing.update({mac_addr[0] : macList})
+                if ssid in listing:
+                    macList = listing.get(ssid)
+                macList.append(bssid)
+                listing.update({ssid : macList})
                 # file.write(mac_addr[1] + "\t\t\t" + mac_addr[0] + "\n")
     for key, value in listing.iteritems():
         file.write("===========" + key + "=========== \n")
