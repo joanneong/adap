@@ -1,0 +1,12 @@
+.section {
+	text-align: center;
+  font-size: 200%;
+  color: white;
+  background-color: #111111;
+}
+
+img {
+  width: 40%;
+  margin: auto;
+  vertical-align: middle;
+}

@@ -1,0 +1,29 @@
+.section {
+  font-size: 100%;
+  color: black;
+  background-color: #ffffff;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 60px;
+}
+
+/* disable resizing for text area */
+textarea {
+  min-height: 50px;
+  max-height: 130px;
+  resize: none !important;
+  overflow-y: scroll;
+}
+
+/* format data in table */
+th, td {
+  border: 1px solid #d3d3d3;
+  text-align: center;
+  width: 30%;
+}
+
+.results {
+  max-height: 80px;
+  overflow-y: scroll;
+}
