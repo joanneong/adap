@@ -1,2 +1,2 @@
 INSERT into company_account
-VALUES('test_company', 'cs3235@gmail.com', '123', '12345678', 'NUS', '123456', 'true');
+VALUES('NUS', 'cs3235@gmail.com', '123', '65162727', 'NUS School of Computing, COM1, 13 Computing Drive', '117417', 'true');
