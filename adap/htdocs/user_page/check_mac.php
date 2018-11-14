@@ -29,7 +29,7 @@
         <span class="row">Feel free to verify your MAC address(es) here!</span>
         <span class="row">
           You can check the MAC address(es) in your vicinity by downloading and running this file:
-          <a href="../get_all_mac.py">Python script to get MAC address(es)</a>
+          <a href="../get_all_mac.py" download>Python script to get MAC address(es)</a>
         </span>
       </div>
       <div class="row">
