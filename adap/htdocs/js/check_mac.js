@@ -1,8 +1,3 @@
-// Initialist tabs
-$(document).ready(function(){
-  $('.tabs').tabs();
-});
-
 // Allow autoresizing for text area
 // Credit: https://stephanwagner.me/auto-resizing-textarea
 jQuery.each(jQuery('textarea[data-autoresize]'), function() {
@@ -71,6 +66,15 @@ function showResultsForType(type, arr) {
   }
 }
 
+// Remove duplicate elements in an array
+function removeDuplicates(arr) {
+  arr = arr.filter(function(item, pos, self) {
+    return self.indexOf(item) == pos;
+  });
+
+  return arr;
+}
+
 function showVerificationResults(response) {
   console.log("response: " + response);
   response = JSON.parse(response);
@@ -78,6 +82,10 @@ function showVerificationResults(response) {
   var whitelisted = response.whitelisted;
   var not_whitelisted = response.not_whitelisted;
   var invalid = response.invalid;
+
+  whitelisted = removeDuplicates(whitelisted);
+  not_whitelisted = removeDuplicates(not_whitelisted);
+  invalid = removeDuplicates(invalid);
 
   showResultsForType("whitelisted", whitelisted);
   showResultsForType("not_whitelisted", not_whitelisted);

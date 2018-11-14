@@ -49,17 +49,28 @@
     </div>
 
     <div class="row" id="results_section" style="display:none;">
-      <div class="col s12">
-        <ul class="tabs">
-          <li class="tab col s3"><a href="#whitelisted">Whitelisted</a></li>
-          <li class="tab col s3"><a href="#not_whitelisted">Not whitelisted</a></li>
-          <li class="tab col s3"><a href="#invalid">Invalid</a></li>
-        </ul>
-      </div>
-      <div id="whitelisted" class="col s12" style="white-space:pre-wrap;"></div>
-      <div id="not_whitelisted" class="col s12" style="white-space:pre-wrap;"></div>
-      <div id="invalid" class="col s12" style="white-space:pre-wrap;"></div>
+      <table style="width:100%" class="highlight center"> 
+        <thead>
+          <tr>
+            <th class="grey-text text-darken-2">Whitelisted</th>
+            <th class="grey-text text-darken-2">Not whitelisted</th>
+            <th class="grey-text text-darken-2">Invalid</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>
+            <div class="results" id="whitelisted" style="text-align:center; white-space:pre-wrap;"></div>
+          </td>
+          <td>
+            <div class="results" id="not_whitelisted" style="text-align:center; white-space:pre-wrap;"></div>
+          </td>
+          <td>
+            <div class="results" id="invalid" style="text-align:center; white-space:pre-wrap;"></div>
+          </td>
+        </tr>
+      </table>
     </div>
+  </div>
 
   <!-- Import jQuery and other relevant JavaScript files -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
