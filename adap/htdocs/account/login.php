@@ -24,13 +24,10 @@
     require_once '../config.php';
     $email = test_input($_POST['email']);
     $password = test_input($_POST['password']);
-
-    $result = pg_query($db, "SELECT * FROM company_account where email = '$email'");
+    $result = pg_prepare($db, "query", 'SELECT * FROM company_account where email = $1');
+    $result = pg_execute($db, "query", array($email));
     $row = pg_fetch_assoc($result); 
-    //$sql = 'SELECT * FROM company_account';
-    //$result = pg_prepare($db, "", $sql);
-    //$result = pg_execute($db, "", $email);
-    //$row = pg_fetch_all($result);
+    
     if (isset($_POST['submit'])) {
       if (trim($email)==null) $err = 'Please enter email';
       else if (trim($password)==null) $err='Please enter password';
@@ -59,7 +56,7 @@
     <form name="display" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" >
       <div class="row">
         <div class="input-field col s6 offset-s3">
-          <input type="email" name="email" value="<?php echo $_POST[email]; ?>" placeholder="Email" id="" />
+          <input type="email" name="email" value="<?php echo $email; ?>" placeholder="Email" id="" />
         </div>
       </div>
       <div class="row">

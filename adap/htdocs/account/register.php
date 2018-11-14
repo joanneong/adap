@@ -67,7 +67,10 @@
       else $postal_code_bool = true;
 
       if (($company_name_bool == true) && ($email_bool == true) && ($password_bool == true) && ($contact_bool == true) && ($address_bool == true) && ($postal_code_bool == true)) {
-        $result = pg_query($db, "INSERT INTO company_account VALUES ('$company_name','$email','$password','$contact','$address','$postal_code')");
+        // $result = pg_query($db, "INSERT INTO company_account VALUES ('$company_name','$email','$password','$contact','$address','$postal_code')");
+        $result = pg_prepare($db, "query", 'INSERT INTO company_account VALUES ($1, $2, $3, $4, $5, $6)');
+        $tag = array($company_name, $email, $password, $contact, $address, $postal_code);
+        $result = pg_execute($db, "query", $tag);
         if (!$result)  $err = 'Account was already created before. Would you like to <a href="login.php">log in</a> instead? <br />';
         else {
             header("location: register_success.php");
