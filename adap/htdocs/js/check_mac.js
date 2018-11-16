@@ -68,6 +68,10 @@ function showResultsForType(type, arr) {
 
 // Remove duplicate elements in an array
 function removeDuplicates(arr) {
+  if (typeof arr != 'object' || arr.length == 0) {
+    return arr;
+  }
+
   arr = arr.filter(function(item, pos, self) {
     return self.indexOf(item) == pos;
   });
